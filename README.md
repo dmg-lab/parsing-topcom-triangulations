@@ -18,7 +18,7 @@ polymake --script polymake/rays_of_sec_cones.pl test_input/D4xD2.dat test_input/
 ```
 
 Additionally there is a file to turn all data into a Julia tuple of OSCAR
-datatypes and store them as a `.mrdi` file:
+datatypes and store them as a `.mrdi`[^6] file:
 ```
 julia julia/parse_triangulations_to_mrdi.jl test_input/D4xD2.dat test_input/mptopcom.out.xz
 ```
@@ -67,3 +67,4 @@ All scripts here assume that the input is given in two files:
 [^3]: [polymake](https://polymake.org)
 [^4]: [Julia](https://julialang.org/)
 [^5]: [Oscar.jl](https://github.com/oscar-system/Oscar.jl)
+[^6]: Della Vecchia, Joswig, Lorenz: [A FAIR File Format for Mathematical Software](https://arxiv.org/abs/2309.00465)
