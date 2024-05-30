@@ -9,12 +9,25 @@ julia julia/parse_triangulations.jl test_input/D4xD2.dat test_input/mptopcom.out
 julia julia/parse_triangulations_oscar.jl test_input/D4xD2.dat test_input/mptopcom.out.xz
 polymake --script polymake/parse_triangulations.pl test_input/D4xD2.dat test_input/mptopcom.out.xz
 ```
+
 For convenience we also provide a script computing the rays of the secondary
 cones of the triangulations in the output file up to group action. A sample
 call is
 ```
 polymake --script polymake/rays_of_sec_cones.pl test_input/D4xD2.dat test_input/mptopcom.out.xz
 ```
+
+Additionally there is a file to turn all data into a Julia tuple of OSCAR
+datatypes and store them as a `.mrdi` file:
+```
+julia julia/parse_triangulations_to_mrdi.jl test_input/D4xD2.dat test_input/mptopcom.out.xz
+```
+This tuple has three entries, `points` the matrix of points, `group` the group
+acting, and `triangulations` a vector of the triangulations as
+`IncidenceMatrix`es. These can then be used to assemble every triangulation
+into a `SubdivisionOfPoints`. Note that often the output data will be too large
+for this script to work. Then use one of the other scripts that processes the
+output line by line.
 
 ## Encoding triangulations
 Both TOPCOM and mptopcom use the same encoding for a triangulation. An examples
