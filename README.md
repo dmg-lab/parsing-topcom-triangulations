@@ -36,6 +36,9 @@ is a simplex of the triangulation and is to be interpreted as the simplex
 formed by the convex hull of the 0th, 1st, 2nd, 3rd, 4th, 5th, and 10th input
 point.
 
+Note that Julia indexes from 1, so it is necessary to shift all indexes that
+come from mptopcom or TOPCOM.
+
 ## Input files for the scripts
 All scripts here assume that the input is given in two files:
 * **input.dat** The input file of TOPCOM or mptopcom. The format is the same in
